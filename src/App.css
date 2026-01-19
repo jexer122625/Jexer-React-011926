@@ -1,0 +1,176 @@
+:root {
+  --bg-light: #ffffff;
+  --fg-light: #111111;
+  --bg-dark: #0b1220;
+  --fg-dark: #e6eef8;
+  --primary: #2563eb;
+  --secondary: #6b7280;
+  --border-light: rgba(0, 0, 0, 0.06);
+  --border-dark: rgba(255, 255, 255, 0.06);
+}
+
+.app-root.theme-light {
+  background: var(--bg-light);
+  color: var(--fg-light);
+}
+
+.app-root.theme-dark {
+  background: var(--bg-dark);
+  color: var(--fg-dark);
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.sidebar {
+  width: 320px;
+  padding: 16px;
+  box-sizing: border-box;
+  border-right: 1px solid var(--border-light);
+}
+
+.theme-dark .sidebar {
+  border-color: var(--border-dark);
+}
+
+.main {
+  flex: 1;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 6px 0 12px;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  margin-top: 4px;
+}
+
+input[type="file"] {
+  margin-top: 6px;
+}
+
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  margin-top: 6px;
+  padding: 6px 8px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 0;
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-secondary {
+  background: var(--secondary);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.muted {
+  opacity: 0.7;
+}
+
+.small {
+  font-size: 0.9rem;
+}
+
+.painters {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.painter {
+  display: inline-block;
+  padding: 6px 8px;
+  margin: 4px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.theme-dark .painter {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.painter-selected {
+  border: 2px solid var(--primary);
+}
+
+.result {
+  white-space: pre-wrap;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+.theme-dark .result {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selectors select {
+  margin-left: 4px;
+}
+
+.panel {
+  margin-bottom: 8px;
+}
+
+.error {
+  color: #dc2626;
+}
+```
+
+### 2.3 Minimal `src/main.jsx` (or `index.jsx`)
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./App.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
